@@ -17,7 +17,7 @@ for (i = 0; i <= 9; i++)
 		putchar(i + 48);
 		putchar(j + 48);
 		putchar(' ');
-		for (k = i; kk <= 9; k++)
+		for (k = i; k <= 9; k++)
 		{
 			for (m = j + 1; m <= 9; m++)
 			{
