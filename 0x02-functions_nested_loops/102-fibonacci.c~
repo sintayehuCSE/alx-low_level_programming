@@ -1,0 +1,17 @@
+#include <stdio.h>
+/**
+ * main - prints the first 50 fibonacci numbers
+ * Return: 0 on exit
+ */
+int main(void)
+{
+	int old_fibo = 1;
+	int current_fibo = 2;
+	int next_fibo;
+	int i = 0;
+
+	while (i < 50)
+	{
+		
+	}
+}
