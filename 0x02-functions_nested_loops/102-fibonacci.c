@@ -8,7 +8,6 @@ int main(void)
 	long int old_fibo = 1;
 	long int current_fibo = 2;
 	long int next_fibo;
-	long int temp;
 	int i = 0;
 
 	printf("%ld, ", old_fibo);
