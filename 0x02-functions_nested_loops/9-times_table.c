@@ -14,14 +14,15 @@ void times_table(void)
 			if ((i * j) <= 9)
 			{
 				_putchar(((i * j) % 10) + 48);
-				_putchar(44);
 				if ((j != 9) && (i * (j + 1) <= 9))
 				{
+					_putchar(44);
 					_putchar(32);
 					_putchar(32);
 				}
 				else
 				{
+					_putchar(44);
 					_putchar(32);
 				}
 			}
