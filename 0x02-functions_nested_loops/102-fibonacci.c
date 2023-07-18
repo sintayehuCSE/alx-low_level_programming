@@ -5,20 +5,20 @@
  */
 int main(void)
 {
-	int old_fibo = 1;
-	int current_fibo = 2;
-	int next_fibo;
-	int temp;
+	long int old_fibo = 1;
+	long int current_fibo = 2;
+	long int next_fibo;
+	long int temp;
 	int i = 0;
 
-	printf("%d, ", old_fibo);
-	printf("%d, ", current_fibo);
+	printf("%ld, ", old_fibo);
+	printf("%ld, ", current_fibo);
 	while (i < 48)
 	{
 		next_fibo = old_fibo + current_fibo;
 		old_fibo = current_fibo;
 		current_fibo = next_fibo;
-		printf("%d", next_fibo);
+		printf("%ld", next_fibo);
 		if (i != 47)
 			printf(", ");
 		i++;
