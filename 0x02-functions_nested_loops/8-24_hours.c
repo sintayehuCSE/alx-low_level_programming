@@ -20,5 +20,6 @@ void jack_bauer(void)
 			j++;
 		}
 		i++;
+		j = 0;
 	}
 }
