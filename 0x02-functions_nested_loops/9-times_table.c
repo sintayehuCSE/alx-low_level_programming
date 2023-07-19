@@ -1,17 +1,7 @@
-#include <unistd.h>
 #include "main.h"
 /**
  * times_table - prints 9 times of table
  */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-int main(void)
-{
-    times_table();
-    return (0);
-}
 void times_table(void)
 {
 	int i = 0;
