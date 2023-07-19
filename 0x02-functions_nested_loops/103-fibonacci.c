@@ -5,11 +5,11 @@
  */
 int main(void)
 {
-	long long int old_fibo = 1;
-	long long int current_fibo = 2;
-	long long int next_fibo;
-	long long int sum = 2;
-	long long int i = 2;
+	unsigned long int old_fibo = 1;
+	unsigned  long int current_fibo = 2;
+	unsigned  long int next_fibo;
+	unsigned  long int sum = 2;
+	unsigned  long int i = 2;
 
 	while (i < 4000000)
 	{
