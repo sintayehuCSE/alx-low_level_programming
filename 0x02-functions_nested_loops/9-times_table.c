@@ -1,7 +1,17 @@
+#include <unistd.h>
 #include "main.h"
 /**
  * times_table - prints 9 times of table
  */
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
+int main(void)
+{
+    times_table();
+    return (0);
+}
 void times_table(void)
 {
 	int i = 0;
@@ -23,8 +33,10 @@ void times_table(void)
 				else
 				{
 					if (((i != 0) && (j != 9)) || ((i != 1) && (j != 9)))
-					_putchar(44);
-					_putchar(32);
+					{
+						_putchar(44);
+						_putchar(32);
+					}
 				}
 			}
 			else
