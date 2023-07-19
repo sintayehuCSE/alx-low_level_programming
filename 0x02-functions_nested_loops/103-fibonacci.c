@@ -22,6 +22,6 @@ int main(void)
 			break;
 		i++;
 	}
-	printf("%lld\n", sum);
+	printf("%lu\n", sum);
 	return (0);
 }
