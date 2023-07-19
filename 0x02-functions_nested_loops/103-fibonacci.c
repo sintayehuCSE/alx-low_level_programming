@@ -16,7 +16,7 @@ int main(void)
 		next_fibo = old_fibo + current_fibo;
 		old_fibo = current_fibo;
 		current_fibo = next_fibo;
-	        if (next_fibo % 2 == 0)
+		if (next_fibo % 2 == 0)
 			sum += next_fibo;
 		if (sum > 4000000)
 			break;
