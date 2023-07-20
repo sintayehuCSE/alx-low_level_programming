@@ -9,7 +9,7 @@ void print_most_numbers(void)
 
 	while (c >= 48 && c <= 57)
 	{
-		if (c != 50 || c != 52)
+		if (c != 50 && c != 52)
 			_putchar(c);
 		c++;
 	}
