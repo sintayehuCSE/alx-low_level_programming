@@ -1,7 +1,9 @@
 #include <stdio.h>
 /**
- * main - prints the numbers from 1 to 100 but replaces multiple of both 3 and 5
- * with FizzBuzz, only multiple of 3 with Fizz, and only multiple of 5 with Buzz
+ * main - prints the numbers from 1 to 100 but
+ * replaces multiple of both 3 and 5
+ * with FizzBuzz, only multiple of 3 with Fizz,
+ * and only multiple of 5 with Buzz
  * Return: 0 on exit
  */
 
