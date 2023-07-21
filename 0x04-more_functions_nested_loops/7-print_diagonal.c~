@@ -1,0 +1,52 @@
+#include "main.h"
+#include <unistd.h>
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    print_diagonal(0);
+    print_diagonal(2);
+    print_diagonal(10);
+    print_diagonal(-4);
+    return (0);
+}
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
+/**
+ * print_diagonal - draws diagonal line on the terminal
+ * @n: number of times the character \ shoud be printed
+ */
+
+void print_diagonal(int n)
+{
+	int i = 1;
+	int j = 0;
+
+	if (n > 0)
+	{
+		while (i <= n)
+		{
+			_putchar(92);
+			_putchar(10);
+			if (n > 1 && i != n)
+			{
+				while (j <= i - 1)
+				{
+					_putchar(32);
+					j++;
+				}
+			}
+			i++;
+			j = 0;
+		}
+	}
+	else
+	{
+		_putchar(10);
+	}
+}
