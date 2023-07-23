@@ -3,6 +3,12 @@ long int largest_prime_factor(long int);
 int check_prime(long int)
 /**
  * main - prints the largest prime factor of specified no.
+ *
+ * This code doesn't work for all numbers,ex for num with
+ * last two digit = 43 it doesn't work whereas for num with
+ * last two digit = 50, it works so well. And I don't unde-
+ * rstand what went wrong at all!
+ *
  * Return: 0 on exit
  */
 
