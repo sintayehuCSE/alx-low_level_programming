@@ -1,5 +1,5 @@
 #include <stdio.h>
-11;rgb:0000/0000/0000long int largest_prime_factor(long int);
+long int largest_prime_factor(long int);
 int check_prime(long int);
 /**
  * main - prints the largest prime factor of specified no.
