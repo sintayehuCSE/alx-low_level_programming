@@ -14,7 +14,7 @@ int check_prime(long int);
 
 int main(void)
 {
-	long int num = 612852475143;
+	long int num = 612852475150;
 	long int largest = largest_prime_factor(num);
 
 	printf("%ld\n", largest);
