@@ -1,0 +1,7 @@
+#include "main.h"
+/**
+ * _atoi - convert string in to an integer
+ * @s: string to be converted
+ *
+ * Return: 0 if no integer in string. found integer otherwise
+ */
