@@ -8,7 +8,7 @@
 
 int _atoi(char *s)
 {
-	int result = 0;
+	unsigned int result = 0;
 	int check = 1;
 
 	while (*s)
@@ -17,7 +17,7 @@ int _atoi(char *s)
 		{
 			if ((*(s - 1)) == 45)
 				check *= -1;
-			result = (result + (int)(*s)) * 10;
+			result = (result + (*s + '0')) * 10;
 			if (((*(s + 1)) == 32) || ((*(s + 1)) == 0))
 			{
 				if (check == -1)
