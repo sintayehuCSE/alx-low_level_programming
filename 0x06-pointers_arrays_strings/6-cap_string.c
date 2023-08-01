@@ -36,8 +36,6 @@ char *cap_string(char *str)
 				}
 				j = 0;
 			}
-			if (*(str + i - 1) == 9)
-				*(str + i - 1) = 32;
 		}
 		i++;
 	}
