@@ -31,7 +31,7 @@ char *cap_string(char *str)
 					if (*(str + i - 1) == term[j])
 					{
 						*(str + i) -= 32;
-						if (*(str + i - 10 == 9))
+						if (*(str + i - 1) == 9))
 							*(str + i - 1) = 32;
 						break;
 					}
