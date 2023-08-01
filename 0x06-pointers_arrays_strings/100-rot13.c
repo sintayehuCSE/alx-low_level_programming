@@ -1,27 +1,29 @@
 #include "main.h"
-
 /**
- * rot13 - encodes a string into rot13
- * @s: string to encode
+ * rot13 - replace every alphabet by its 13th alphabet in a give string
+ * @str: string whose rot13 algorithm is to be applied to
  *
- * Return: address of s
+ * Return: char pointer to rot13 encripted string
  */
-char *rot13(char *s)
-{
-	int i, j;
-	char a[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char b[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
-	for (i = 0; *(s + i); i++)
+char *rot13(char *str)
+{
+	char input[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char output[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	int i = 0;
+	int j = 0;
+
+	for (; *(str + i); i++)
 	{
-		for (j = 0; j < 52; j++)
+		for (; *(input + j); j++)
 		{
-			if (a[j] == *(s + i))
+			if (*(str + i) == *(input + j))
 			{
-				*(s + i) = b[j];
+				*(str + i) = *(output + j);
 				break;
 			}
 		}
+		j = 0;
 	}
-	return (s);
+	return (str);
 }
