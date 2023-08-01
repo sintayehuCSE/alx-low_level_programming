@@ -8,15 +8,21 @@
 
 char *leet(char *str)
 {
-	char alphabet = "aAeEoOtTlL";
-	char digit = "4433007711";
+	char alphabet[] = "aAeEoOtTlL";
+	char digit[] = "4433007711";
 	int i = 0;
+	int j = 0;
 
-	while (*str)
+	for (; *(str + j); j++)
 	{
-		for (; i < sizeof(alphabet); i++)
-			if (*(str + i) == *(alphabet + i))
-				*(str + i) = *(digit + i);
+		for (; *(alphabet + i); i++)
+		{
+			if (*(str + j) == *(alphabet + i))
+			{
+				*(str + j) = *(digit + i);
+				break;
+			}
+		}
 		i = 0;
 	}
 	return (str);
