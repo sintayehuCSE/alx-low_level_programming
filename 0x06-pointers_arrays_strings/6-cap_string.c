@@ -24,11 +24,15 @@ char *cap_string(char *str)
 			check_capital = iscapital((str + i));
 			if (check_capital == 0)
 			{
+				if (i == 0)
+					*(str) -= 32;
 				for (; term[j]; j++)
 				{
 					if (*(str + i - 1) == term[j])
 					{
 						*(str + i) -= 32;
+						if (*(str + i - 10 == 9))
+							*(str + i - 1) = 32;
 						break;
 					}
 				}
