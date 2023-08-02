@@ -12,9 +12,9 @@ unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int count = 0;
 
-	while (*s != 32)
+	while (*s)
 	{
-		if (*s == *accept)
+		if ( (*s != 32) && (*s == *accept))
 			count++;
 		s++;
 		accept++;
