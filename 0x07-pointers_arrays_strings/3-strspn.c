@@ -11,13 +11,18 @@
 unsigned int _strspn(char *s, char *accept)
 {
 	int count = 0;
+	char *initial = accept;
 
-	while (*s && *accept)
+	while (*s != 32)
 	{
-		if ((*s != 32) && (*s == *accept))
-			count++;
+		while (*accept)
+		{
+			if (*s == *accept)
+				count++;
+			accept++;
+		}
 		s++;
-		accept++;
+		accept = initial;
 	}
 	return (count);
 }
