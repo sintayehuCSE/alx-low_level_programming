@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 /**
  * main - prints the number of arguments passed to a program
  * @argc: count the number of arguments passed to command line interpretor
@@ -10,6 +10,7 @@
 int main(int argc, char *argv[])
 {
 	if (argc > 0)
-		printf("%d\n", argc - 1);
+		_putchar((char)argc - '1');
+	_putchar(10);
 	return (0);
 }
