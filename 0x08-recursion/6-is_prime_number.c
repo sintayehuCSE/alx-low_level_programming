@@ -12,7 +12,7 @@ int check(int a, int n)
 	if (a == n)
 		return (1);
 	else if (n % a == 0)
-		return (-1);
+		return (0);
 	return (check(a + 1, n));
 }
 /**
@@ -25,6 +25,6 @@ int check(int a, int n)
 int is_prime_number(int n)
 {
 	if (n <= 1)
-		return (-1);
+		return (0);
 	return (check(2, n));
 }
