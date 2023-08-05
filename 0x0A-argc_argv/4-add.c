@@ -10,29 +10,29 @@
  */
 int main(int argc, char **argv)
 {
-	int i, n, sum = 0;
-	char *flag;
+	int i = 1;
+	char *ptr;
+	long int digit;
+	long int sum = 0;
 
-	if (argc < 2)
+	if (argc <= 1)
 	{
 		printf("0\n");
 		return (0);
 	}
-
-	for (i = 1; argv[i]; i++)
+	for (; i < argc; i++)
 	{
-		n = strtol(argv[i], &flag, 10);
-		if (*flag)
+		digit = strtol(argv[i], &ptr, 10);
+		if (*ptr)
 		{
 			printf("Error\n");
 			return (1);
 		}
 		else
 		{
-			sum += n;
+			sum += digit;
 		}
 	}
-	printf("%d\n", sum);
-
+	printf("%ld\n", sum);
 	return (0);
 }
