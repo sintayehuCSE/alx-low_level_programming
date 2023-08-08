@@ -1,5 +1,5 @@
 #include "main.h"
-/**
+11;rgb:0000/0000/0000/**
  * _strdup - a function that duplicate string
  * @str: string to duplicated
  *
@@ -19,7 +19,7 @@ char *_strdup(char *str)
 	}
 	len = len + 1;
 	i = 0;
-	if (str != NULL)
+	if (str)
 	{
 		dup_string = malloc(len * sizeof(char));
 		if (dup_string)
