@@ -17,6 +17,7 @@ char *_strdup(char *str)
 		len++;
 		i++;
 	}
+	len = len + 1;
 	i = 0;
 	if (str != NULL)
 	{
@@ -33,10 +34,6 @@ char *_strdup(char *str)
 		{
 			return (NULL);
 		}
-	}
-	else
-	{
-		return (NULL);
 	}
 	return (dup_string);
 }
