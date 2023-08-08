@@ -1,5 +1,5 @@
 #include "main.h"
-11;rgb:0000/0000/0000/**
+/**
  * _strdup - a function that duplicate string
  * @str: string to duplicated
  *
