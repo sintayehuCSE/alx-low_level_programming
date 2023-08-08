@@ -17,10 +17,10 @@ char *str_concat(char *s1, char *s2)
 
 	len1 = find_lens1(s1);
 	len2 = find_lens2(s2);
-	concat = malloc((len1 * sizeof(char)) + (len2 * sizeof(char)));
+	concat = malloc((len1 * sizeof(char)) + (len2 * sizeof(char)) + 1);
 	if (concat)
 	{
-		if (len1 == 0)
+		if (len1 == 0 && len2 != 0)
 		{
 			while (*(s2 + i))
 			{
@@ -28,13 +28,17 @@ char *str_concat(char *s1, char *s2)
 				i++;
 			}
 		}
-		else if (len2 == 0)
+		else if (len2 == 0 && len1 != 0)
 		{
 			while (*(s1 + i))
 			{
 				*(concat + i) = *(s1 + i);
 				i++;
 			}
+		}
+		else if (len1 == 0 && len2 == 0)
+		{
+			*(concat + i) = '\0';
 		}
 		else
 		{
@@ -50,7 +54,8 @@ char *str_concat(char *s1, char *s2)
 				j++;
 			}
 		}
-		*(concat + i) = '\0';
+		if (len1 != 0 || len2 != 0)
+			*(concat + i) = '\0';
 	}
 	else
 	{
