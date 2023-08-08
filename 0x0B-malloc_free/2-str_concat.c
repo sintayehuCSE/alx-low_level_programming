@@ -75,10 +75,13 @@ unsigned int find_lens1(char *s1)
 	unsigned int i = 0;
 	unsigned int len1 = 0;
 
-	while (*(s1 + i))
+	if (s1 != NULL)
 	{
-		len1 += 1;
-		i++;
+		while (*(s1 + i))
+		{
+			len1 += 1;
+			i++;
+		}
 	}
 	return (len1);
 }
@@ -94,10 +97,13 @@ unsigned int find_lens2(char *s2)
 	unsigned int i = 0;
 	unsigned int len2 = 0;
 
-	while (*(s2 + i))
+	if (s2 != NULL)
 	{
-		len2 += 1;
-		i++;
+		while (*(s2 + i))
+		{
+			len2 += 1;
+			i++;
+		}
 	}
 	return (len2);
 }
