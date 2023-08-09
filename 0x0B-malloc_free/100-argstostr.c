@@ -1,5 +1,5 @@
 #include "main.h"
-0;276;0c/**
+/**
  * argstostr - concatenates all the command line argument of a program
  * @ac: The number of command line argument
  * @av: Double pointer to the array that hold command line argument
