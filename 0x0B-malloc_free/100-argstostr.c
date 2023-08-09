@@ -9,18 +9,17 @@
 
 char *argstostr(int ac, char **av)
 {
+	char *concat_arg;
+        int i = 0;
+
 	if (ac == 0 || av == NULL)
 		return (NULL);
-
-	char *concat_arg;
-	int i = 0;
-
 	concat_arg = malloc(ac * sizeof(char) + 1);
 	if (concat_arg != NULL)
 	{
 		while (i < 2 * ac)
 		{
-			concat_arg[i] = av[i];
+			concat_arg[i] = (char *)av[i];
 			i++;
 			concat_arg[i] = '\n';
 			i++;
