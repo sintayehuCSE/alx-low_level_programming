@@ -19,9 +19,9 @@ char *argstostr(int ac, char **av)
 	{
 		while (i < 2 * ac)
 		{
-			concat_arg[i] = av[i];
+			concat_arg = av[i];
 			i++;
-			concat_arg[i] = '\n';
+			concat_arg = '\n';
 			i++;
 		}
 	}
