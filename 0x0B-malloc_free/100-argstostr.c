@@ -21,7 +21,7 @@ char *argstostr(int ac, char **av)
 		{
 			concat_arg = av[i];
 			i++;
-			concat_arg = '\n';
+			concat_arg[i] = '\n';
 			i++;
 		}
 	}
