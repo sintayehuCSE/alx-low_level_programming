@@ -1,6 +1,42 @@
-#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 void check_out_each_word(char **words, char *str);
 void insert_word(char **words, char *str, int start, int end, int index);
+char **strtow(char *str);
+/**
+ * print_tab - Prints an array of string
+ * @tab: The array to print
+ *
+ * Return: nothing
+ */
+void print_tab(char **tab)
+{
+    int i;
+
+    for (i = 0; tab[i] != NULL; ++i)
+    {
+        printf("%s\n", tab[i]);
+    }
+}
+
+/**
+ * main - check the code for ALX School students.
+ *
+ * Return: 1 if an error occurred, 0 otherwise
+ */
+int main(void)
+{
+    char **tab;
+
+    tab = strtow("      ALX School         #cisfun      ");
+    if (tab == NULL)
+    {
+        printf("Failed\n");
+        return (1);
+    }
+    print_tab(tab);
+    return (0);
+}
 /**
  * strtow - convert/organize each element of string into words
  * @str: The string to be organized into words
@@ -15,7 +51,7 @@ char **strtow(char *str)
 	int flag_1st_char = 0;
 	int len = 0;
 
-	if (str == NULL || *(str) == '\0' || (str[1] == '\0' && *(str) == 32))
+	if (str == NULL || *(str) == '\0' || (*(str + i + 1) == '\0' && *(str + i) == 32))
 	{
 		return (NULL);
 	}
@@ -67,7 +103,7 @@ void check_out_each_word(char **words, char *str)
 			start = i;
 			flag = 1;
 		}
-		if (i > 0 && str[i] == 32 && *(str + i - 1) != 32)
+		if (i > 0 && str[i] == 32 && *(str + i -1) != 32)
 		{
 			flag = 0;
 			end = i;
@@ -96,7 +132,7 @@ void insert_word(char **words, char *str, int start, int end, int index)
 
 	words[index] = malloc(sizeof(char) * word_len + 1);
 	if (words[index] == NULL)
-		return;
+		return ;
 	for (; i < word_len; i++)
 	{
 		words[index][i] = *(str + start);
