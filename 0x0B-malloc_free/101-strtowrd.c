@@ -68,7 +68,9 @@ char **strtow(char *str)
 			}
 		}
 		len = len + flag_1st_char;
-		words = (char **)malloc(sizeof(char *) * len + 1);
+		if (len == 0)
+			return (NULL);
+		words = (char **)malloc(sizeof(char *) * (len + 1));
 		if (words == NULL)
 		{
 			return (NULL);
@@ -134,7 +136,7 @@ void insert_word(char **words, char *str, int start, int end, int index)
 	int i = 0;
 	int word_len = end - start;
 
-	words[index] = malloc(sizeof(char) * word_len + 1);
+	words[index] = malloc(sizeof(char) * (word_len + 1));
 	if (words[index] == NULL)
 		return ;
 	for (; i < word_len; i++)
