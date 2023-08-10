@@ -75,6 +75,11 @@ void check_out_each_word(char **words, char *str)
 			j++;
 		}
 	}
+	if (flag == 1)
+	{
+		end = i;
+		insert_word(words, str, start, end, j);
+	}
 }
 
 /**

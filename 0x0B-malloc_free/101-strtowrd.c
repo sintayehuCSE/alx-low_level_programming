@@ -51,7 +51,7 @@ char **strtow(char *str)
 	int flag_1st_char = 0;
 	int len = 0;
 
-	if (str == NULL || *(str) == '\0' || (*(str + i + 1) == '\0' && *(str + i) == 32))
+	if (str == NULL || *(str) == '\0' || (*(str + 1) == '\0' && *(str) == ' '))
 	{
 		return (NULL);
 	}
@@ -111,8 +111,12 @@ void check_out_each_word(char **words, char *str)
 			j++;
 		}
 	}
+	if (flag == 1)
+	{
+		end = i;
+		insert_word(words, str, start, end, j);
+	}
 }
-
 /**
  * insert_word - insert word into each several 1D array of 2D array as
  * instructed by @check_out_each_word function.
