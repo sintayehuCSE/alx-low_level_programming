@@ -1,49 +1,4 @@
 #include "main.h"
-/**
- * string_nconcat - concatenates n byte of 2nd string on 1st string
- * @s1: first string to recieve concatenatio
- * @s2: 2nd string to provide byte for concatenation
- * @n: Number of byte/char to be used from @s2 for concatenation
- *
- * Return: A pointer to newly allocated space that hold the concatenated string
- */
-
-char *string_nconcat(char *s1, char *s2, unsigned int n)
-{
-	unsigned int x, y, z;
-	char *s;
-
-	if (s1 == NULL)
-	{
-		x = 0;
-	}
-	else
-	{
-		for (x = 0; s1[x]; ++x)
-		;
-	}
-	if (s2 == NULL)
-	{
-		y = 0;
-	}
-	else
-	{
-		for (y = 0; s2[y]; ++y)
-		;
-	}
-	if (y > n)
-		y = n;
-	s = malloc(sizeof(char) * (x + y + 1));
-	if (s == NULL)
-		return (NULL);
-	for (z = 0; z < x; z++)
-		s[z] = s1[z];
-	for (z = 0; z < y; z++)
-		s[z + x] = s2[z];
-	s[x + y] = '\0';
-	return (s);
-}
-#include "main.h"
 unsigned int find_len1(char *s1);
 unsigned int find_len2(char *s2);
 /**
