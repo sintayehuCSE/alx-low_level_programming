@@ -1,4 +1,49 @@
 #include "main.h"
+/**
+ * string_nconcat - concatenates n byte of 2nd string on 1st string
+ * @s1: first string to recieve concatenatio
+ * @s2: 2nd string to provide byte for concatenation
+ * @n: Number of byte/char to be used from @s2 for concatenation
+ *
+ * Return: A pointer to newly allocated space that hold the concatenated string
+ */
+
+char *string_nconcat(char *s1, char *s2, unsigned int n)
+{
+	unsigned int x, y, z;
+	char *s;
+
+	if (s1 == NULL)
+	{
+		x = 0;
+	}
+	else
+	{
+		for (x = 0; s1[x]; ++x)
+		;
+	}
+	if (s2 == NULL)
+	{
+		y = 0;
+	}
+	else
+	{
+		for (y = 0; s2[y]; ++y)
+		;
+	}
+	if (y > n)
+		y = n;
+	s = malloc(sizeof(char) * (x + y + 1));
+	if (s == NULL)
+		return (NULL);
+	for (z = 0; z < x; z++)
+		s[z] = s1[z];
+	for (z = 0; z < y; z++)
+		s[z + x] = s2[z];
+	s[x + y] = '\0';
+	return (s);
+}
+#include "main.h"
 unsigned int find_len1(char *s1);
 unsigned int find_len2(char *s2);
 /**
@@ -20,7 +65,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	len_s1 = find_len1(s1);
 	len_s2 = find_len2(s2);
-	if (n > len_s2)
+	if (len_s2 > n)
+	{
+		len_s2 = n;
+	}
+	else
 	{
 		n_byte_concat = malloc(sizeof(char) * (len_s1 + len_s2 + 1));
 		if (n_byte_concat == NULL)
@@ -39,27 +88,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			}
 		}
 		*(n_byte_concat + i) = '\0';
-	}
-	else
-	{
-		n_byte_concat = malloc(sizeof(char) * (len_s1 + n + 1));
-		if (n_byte_concat == NULL)
-			return (NULL);
-		if (s1 != NULL)
-		{
-			for (; *(s1 + i); i++)
-				n_byte_concat[i] = *(s1 + i);
-		}
-		if (s2 != NULL)
-		{
-			while (j <= n)
-			{
-				*(n_byte_concat + i) = *(s2 + j);
-				j++;
-				i++;
-			}
-		}
-		n_byte_concat[i] = '\0';
 	}
 	return (n_byte_concat);
 }
