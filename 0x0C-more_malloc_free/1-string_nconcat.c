@@ -20,11 +20,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	len_s1 = find_len1(s1);
 	len_s2 = find_len2(s2);
-	if (len_s2 > n)
-	{
-		len_s2 = n;
-	}
-	else
+	if (n > len_s2)
 	{
 		n_byte_concat = malloc(sizeof(char) * (len_s1 + len_s2 + 1));
 		if (n_byte_concat == NULL)
@@ -32,13 +28,34 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		if (s1 != NULL)
 		{
 			for (; s1[i]; i++)
-				n_byte_concat[i] = s1[i];
+				*(n_byte_concat + i) = *(s1 + i);
 		}
 		if (s2 != NULL)
 		{
-			for (; j < len_s2; j++)
+			for (; j <= len_s2; j++)
 			{
-				n_byte_concat[i] = s2[j];
+				*(n_byte_concat + i) = *(s2 + j);
+				i++;
+			}
+		}
+		*(n_byte_concat + i) = '\0';
+	}
+	else
+	{
+		n_byte_concat = malloc(sizeof(char) * (len_s1 + n + 1));
+		if (n_byte_concat == NULL)
+			return (NULL);
+		if (s1 != NULL)
+		{
+			for (; *(s1 + i); i++)
+				n_byte_concat[i] = *(s1 + i);
+		}
+		if (s2 != NULL)
+		{
+			while (j < n)
+			{
+				*(n_byte_concat + i) = *(s2 + j);
+				j++;
 				i++;
 			}
 		}
@@ -80,10 +97,9 @@ unsigned int find_len2(char *s2)
 
 	if (s2 != NULL)
 	{
-		for (; s2[i]; i++)
+		for (; *(s2 + i); i++)
 		{
 			len++;
-			i++;
 		}
 	}
 	return (len);
