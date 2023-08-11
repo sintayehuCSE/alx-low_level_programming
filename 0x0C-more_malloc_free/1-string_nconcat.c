@@ -18,16 +18,16 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int len_s1;
 	unsigned int len_s2;
 
-	len_s1 = (unsigned int)find_len1(s1);
-	len_s2 = (unsigned int)find_len2(s2);
+	len_s1 = find_len1(s1);
+	len_s2 = find_len2(s2);
 	if (n > len_s2)
 	{
-		n_byte_concat = malloc(sizeof(char) * len_s1 + (len_s2 + 1));
+		n_byte_concat = malloc(sizeof(char) * (len_s1 + len_s2 + 1));
 		if (n_byte_concat == NULL)
 			return (NULL);
 		for (; s1[i]; i++)
 			*(n_byte_concat + i) = *(s1 + i);
-		for (; j < len_s2; j++)
+		for (; j <= len_s2; j++)
 		{
 			*(n_byte_concat + i) = *(s2 + j);
 			i++;
@@ -36,12 +36,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	else
 	{
-		n_byte_concat = malloc(sizeof(char) * len_s1 + (n + 1));
+		n_byte_concat = malloc(sizeof(char) * (len_s1 + n + 1));
 		if (n_byte_concat == NULL)
 			return (NULL);
 		for (; *(s1 + i); i++)
 			n_byte_concat[i] = *(s1 + i);
-		while (j < n)
+		while (j <= n)
 		{
 			*(n_byte_concat + i) = *(s2 + j);
 			j++;
