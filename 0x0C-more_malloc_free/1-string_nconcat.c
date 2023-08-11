@@ -13,13 +13,13 @@ int find_len2(char *s2);
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *n_byte_concat;
-	int i = 0;
-	int j = 0;
-	int len_s1;
-	int len_s2;
+	unsigned int i = 0;
+	unsigned int j = 0;
+	unsigned int len_s1;
+	unsigned int len_s2;
 
-	len_s1 = find_len1(s1);
-	len_s2 = find_len2(s2);
+	len_s1 = (unsigned int)find_len1(s1);
+	len_s2 = (unsigned int)find_len2(s2);
 	if (n > len_s2)
 	{
 		n_byte_concat = malloc(sizeof(char) * len_s1 + (len_s2 + 1));
