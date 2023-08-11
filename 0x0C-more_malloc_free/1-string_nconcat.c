@@ -1,6 +1,6 @@
 #include "main.h"
-int find_len1(char *s1);
-int find_len2(char *s2);
+unsigned int find_len1(char *s1);
+unsigned int find_len2(char *s2);
 /**
  * string_nconcat - concatenates n byte of 2nd string on 1st string
  * @s1: first string to recieve concatenatio
@@ -57,7 +57,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
  *
  * Return: Length of the first string
  */
-int find_len1(char *s1)
+unsigned int find_len1(char *s1)
 {
 	int i = 0;
 	int len = 0;
@@ -75,7 +75,7 @@ int find_len1(char *s1)
  *
  * Return: Length of the second string
  */
-int find_len2(char *s2)
+unsigned int find_len2(char *s2)
 {
 	int i = 0;
 	int len = 0;
