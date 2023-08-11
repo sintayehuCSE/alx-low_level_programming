@@ -32,17 +32,17 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		if (s1 != NULL)
 		{
 			for (; s1[i]; i++)
-				*(n_byte_concat + i) = *(s1 + i);
+				n_byte_concat[i] = s1[i];
 		}
 		if (s2 != NULL)
 		{
 			for (; j < len_s2; j++)
 			{
-				*(n_byte_concat + i) = *(s2 + j);
+				n_byte_concat[i] = s2[j];
 				i++;
 			}
 		}
-		*(n_byte_concat + i) = '\0';
+		n_byte_concat[i] = '\0';
 	}
 	return (n_byte_concat);
 }
@@ -80,7 +80,7 @@ unsigned int find_len2(char *s2)
 
 	if (s2 != NULL)
 	{
-		for (; *(s2 + i); i++)
+		for (; s2[i]; i++)
 		{
 			len++;
 			i++;
