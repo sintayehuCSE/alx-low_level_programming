@@ -36,7 +36,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		}
 		if (s2 != NULL)
 		{
-			for (; j <= len_s2; j++)
+			for (; j < len_s2; j++)
 			{
 				*(n_byte_concat + i) = *(s2 + j);
 				i++;
