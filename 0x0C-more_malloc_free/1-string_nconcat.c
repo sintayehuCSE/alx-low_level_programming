@@ -25,12 +25,18 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		n_byte_concat = malloc(sizeof(char) * (len_s1 + len_s2 + 1));
 		if (n_byte_concat == NULL)
 			return (NULL);
-		for (; s1[i]; i++)
-			*(n_byte_concat + i) = *(s1 + i);
-		for (; j <= len_s2; j++)
+		if (s1 != NULL)
 		{
-			*(n_byte_concat + i) = *(s2 + j);
-			i++;
+			for (; s1[i]; i++)
+				*(n_byte_concat + i) = *(s1 + i);
+		}
+		if (s2 != NULL)
+		{
+			for (; j <= len_s2; j++)
+			{
+				*(n_byte_concat + i) = *(s2 + j);
+				i++;
+			}
 		}
 		*(n_byte_concat + i) = '\0';
 	}
@@ -39,13 +45,19 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		n_byte_concat = malloc(sizeof(char) * (len_s1 + n + 1));
 		if (n_byte_concat == NULL)
 			return (NULL);
-		for (; *(s1 + i); i++)
-			n_byte_concat[i] = *(s1 + i);
-		while (j <= n)
+		if (s1 != NULL)
 		{
-			*(n_byte_concat + i) = *(s2 + j);
-			j++;
-			i++;
+			for (; *(s1 + i); i++)
+				n_byte_concat[i] = *(s1 + i);
+		}
+		if (s2 != NULL)
+		{
+			while (j <= n)
+			{
+				*(n_byte_concat + i) = *(s2 + j);
+				j++;
+				i++;
+			}
 		}
 		n_byte_concat[i] = '\0';
 	}
@@ -60,12 +72,15 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 unsigned int find_len1(char *s1)
 {
 	int i = 0;
-	int len = 0;
+	unsigned int len = 0;
 
-	while (s1[i])
+	if (s1 != NULL)
 	{
-		len++;
-		i++;
+		while (s1[i])
+		{
+			len++;
+			i++;
+		}
 	}
 	return (len);
 }
@@ -78,12 +93,15 @@ unsigned int find_len1(char *s1)
 unsigned int find_len2(char *s2)
 {
 	int i = 0;
-	int len = 0;
+	unsigned int len = 0;
 
-	for (; *(s2 + i); i++)
+	if (s2 != NULL)
 	{
-		len++;
-		i++;
+		for (; *(s2 + i); i++)
+		{
+			len++;
+			i++;
+		}
 	}
 	return (len);
 }
