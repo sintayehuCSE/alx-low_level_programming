@@ -1,5 +1,5 @@
 #include <stdio.h>
-11;rgb:0000/0000/0000#include "dog.h"
+#include "dog.h"
 /**
  * print_dog - print out the value of struct dog's element
  * @d: Pointer to access value of the dog struct element
