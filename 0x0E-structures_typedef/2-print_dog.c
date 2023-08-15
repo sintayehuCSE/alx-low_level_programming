@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "dog.h"
 /**
  * print_dog - print out the value of struct dog's element
@@ -12,7 +11,7 @@ void print_dog(struct dog *d)
 			printf("Name: %s\n", (*d).name);
 		if (d->age)
 			printf("Age: %.6f\n", (*d).age);
-		if (*(d).owner)
-			printf("Owner: %s\n", d->owwner);
+		if ((*d).owner)
+			printf("Owner: %s\n", d->owner);
 	}
 }
