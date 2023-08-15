@@ -8,6 +8,11 @@ void print_dog(struct dog *d)
 {
 	if (d)
 	{
-		printf("Name: %s\nAge: %.6f\nOwner: %s\n", d->naem, d->age, d->owner);
+		if (d->name)
+			printf("Name: %s\n", (*d).name);
+		if (d->age)
+			printf("Age: %.6f\n", (*d).age);
+		if (*(d).owner)
+			printf("Owner: %s\n", d->owwner);
 	}
 }
