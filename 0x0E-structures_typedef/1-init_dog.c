@@ -1,5 +1,4 @@
 #include "dog.h"
-void init_dog(struct dog *d, char *name, float age, char *owner);
 /**
  * init_dog - initialize element of new type struct dog
  * @d: Pointer to a structure
