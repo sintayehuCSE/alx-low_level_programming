@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "dog.h"
+11;rgb:0000/0000/0000#include "dog.h"
 /**
  * print_dog - print out the value of struct dog's element
  * @d: Pointer to access value of the dog struct element
@@ -10,9 +10,13 @@ void print_dog(struct dog *d)
 	{
 		if (d->name)
 			printf("Name: %s\n", (*d).name);
+		else
+			printf("Name: (nil)\n");
 		if (d->age)
 			printf("Age: %.6f\n", (*d).age);
 		if ((*d).owner)
 			printf("Owner: %s\n", d->owner);
+		else
+			printf("Owner: (nil)\n");
 	}
 }
