@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "dog.h"
 /**
  * print_dog - print out the value of struct dog's element
