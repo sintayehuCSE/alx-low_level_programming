@@ -1,9 +1,10 @@
+#include <stdlib.h>
+#include <string.h>
+#include "3-calc.h"
 /**
 * get_op_func - Selects the right function to perform the requested
 * operation by the use
 * @s: The kind of operation requested by the user
-* @a: The first argument of opeartion,whatever it is
-* @b: The second argument of operation
 *
 * Return: A pointer to the function that will perform the requested operation
 */
