@@ -1,14 +1,4 @@
 #include "variadic_functions.h"
-int main(void)
-{
-    int sum;
-
-    sum = sum_them_all(2, 98, 1024);
-    printf("%d\n", sum);
-    sum = sum_them_all(4, 98, 1024, 402, -1024);
-    printf("%d\n", sum);
-    return (0);
-}
 /**
  * sum_them_all - Add all the argument passed to it
  * @n: The number of argument to passed in
