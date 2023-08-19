@@ -6,7 +6,7 @@
 void print_all(const char * const format, ...)
 {
 	char *value;
-	int i = 0, int j = 0;
+	int i = 0, j = 0;
 	char *fmt = "iscf";
 	va_list ap;
 
