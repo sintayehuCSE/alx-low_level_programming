@@ -4,7 +4,7 @@
 #include "lists.h"
 
 /**
- * list_len - check the code for Holberton School students.
+ * list_len - Find number of node in a list.
  * @h: name of the list
  * Return: the number of nodes.
  */
