@@ -1,42 +1,107 @@
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 #include "lists.h"
-
-/**
- * _strlen - function that returns the length of a string.
- * @s : s is a character
- * Return: value is i
- */
-int _strlen(const char *s)
+char * _strdup(const char *);
+unsigned int _strlen(const char *);
+size_t print_list(const list_t *h)
 {
-	int i = 0;
+	size_t num_node = 0;
+	const list_t *head = h;
 
-	while (s[i] != '\0')
+	while (head)
 	{
-		i++;
+		if (!head->next)
+			write(1, "[0] (nil)", 9);
+		else
+			printf("[%u] %s\n", head->len, head->str);
+		head = head->next;
+		num_node++;
 	}
-	return (i);
+	return (num_node);
 }
+int main(void)
+{
+    list_t *head;
 
+    head = NULL;
+    add_node(&head, "Alexandro");
+    add_node(&head, "Asaia");
+    add_node(&head, "Augustin");
+    add_node(&head, "Bennett");
+    add_node(&head, "Bilal");
+    add_node(&head, "Chandler");
+    add_node(&head, "Damian");
+    add_node(&head, "Daniel");
+    add_node(&head, "Dora");
+    add_node(&head, "Electra");
+    add_node(&head, "Gloria");
+    add_node(&head, "Joe");
+    add_node(&head, "John");
+    add_node(&head, "John");
+    add_node(&head, "Josquin");
+    add_node(&head, "Kris");
+    add_node(&head, "Marine");
+    add_node(&head, "Mason");
+    add_node(&head, "Praylin");
+    add_node(&head, "Rick");
+    add_node(&head, "Rick");
+    add_node(&head, "Rona");
+    add_node(&head, "Siphan");
+    add_node(&head, "Sravanthi");
+    add_node(&head, "Steven");
+    add_node(&head, "Tasneem");
+    add_node(&head, "William");
+    add_node(&head, "Zee");
+    print_list(head);
+    return (0);
+}
 /**
- * add_node - add a new node at beginning of a list_t list.
- * @head: head of a list_t list.
- * @str: value to insert into element.
- * Return: the number of nodes.
+ * add_node - Add a new node to the beginning of a list
+ * @head: Pointer to the list
+ * @str: Pointer tot the string value to be stored
+ *
+ * Return: Pointer to the new list
  */
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *add;
+	list_t *temp;
 
-	add = malloc(sizeof(list_t));
-	if (add == NULL)
+	temp = malloc(sizeof(*temp));
+	if (!temp)
 		return (NULL);
-	add->str = strdup(str);
+	temp->str = _strdup(str);
+	temp->len = _strlen(str);
+	temp->next = *head;
+	*head = temp;
+	return (temp);
+}
+/**
+ * _strdup - Duplicate a string for storing as struct memeber
+ * @str: The string to be duplicated
+ *
+ * Return: The pointer tot duplicated string
+ */
+char *_strdup(const char *str)
+{
+	char *s;
+	unsigned int len = _strlen(str);
 
-	add->len = _strlen(str);
-	add->next = *head;
-	*head = add;
+	s = malloc(sizeof(*s) * (len + 1));
+	if (!s)
+		return (NULL);
+	while (len > 0)
+	{
+		s[len] =  str[len];
+		len--;
+	}
+	s[len] = str[len];
+	return (s);
+}
+unsigned int _strlen(const char *str)
+{
+	unsigned int len = 0;
 
-	return (add);
+	while (str && str[len])
+	{
+		len++;
+	}
+	return (len);
 }
