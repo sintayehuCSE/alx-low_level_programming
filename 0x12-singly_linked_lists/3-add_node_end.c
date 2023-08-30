@@ -51,9 +51,9 @@ char *_strdup(const char *str)
 		s[len] =  str[len];
 		len--;
 	}
-	if (s)
-		return (s);
-	return (NULL);
+	if (!str)
+		return (NULL);
+	return (s);
 }
 /**
  * _strlen - Determine the length of a string
