@@ -1,5 +1,5 @@
 #include "lists.h"
-char * _strdup(const char *);
+char *_strdup(const char *);
 unsigned int _strlen(const char *);
 /**
  * add_node - Add a new node to the beginning of a list
@@ -43,6 +43,12 @@ char *_strdup(const char *str)
 	s[len] = str[len];
 	return (s);
 }
+/**
+ * _strlen - Determine the length of a string
+ * @str: Pointer to the string
+ *
+ * Return: Length of a string
+ */
 unsigned int _strlen(const char *str)
 {
 	unsigned int len = 0;
