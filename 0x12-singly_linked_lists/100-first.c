@@ -1,16 +1,8 @@
-#include<stdio.h>
-
+#include "lists.h"
 /**
- * myStartupFun - Apply the constructor attribute to myStartupFun() so that it
- *   is executed before main()
+ * before_main - Performs some task before main function execution begins
  */
-void myStartupFun(void) __attribute__ ((constructor));
-
-/**
- * myStartupFun - implementation of myStartupFun
- */
-void myStartupFun(void)
+void before_main()
 {
-	printf("You're beat! and yet, you must allow,\n");
-	printf("I bore my house upon my back!\n");
+	printf("You're beat! and yet, you must allow,\nI bore my house upon my back!\n");
 }
