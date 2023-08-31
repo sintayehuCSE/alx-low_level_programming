@@ -1,4 +1,4 @@
-#include "main.h"
+#include "lists.h"
 /**
  * add_nodeint - Add a new node to a linked list
  * @head: Pointer to the singly linked list
