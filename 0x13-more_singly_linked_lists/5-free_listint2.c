@@ -1,23 +1,18 @@
 #include "lists.h"
-#include <stdlib.h>
-
 /**
- * free_listint2 - function that frees a listint_t list
- * @head: a double pointer of lists
- *
- * Return: void
+ * free_listint2 - Frees a memory space allocated by malloc
+ * @head: Pointer to the 1st node of the singly linked list
  */
-
 void free_listint2(listint_t **head)
 {
-	listint_t *next;
+	listint_t *temp;
 
-	if (head == NULL)
-		return;
-	while (*head != NULL)
+	temp = *head;
+	while (temp)
 	{
-		next = (*head)->next;
-		free(*head);
-		*head = next;
+		*head = *head->next;
+		free(temp);
+		temp = *head->next;
 	}
+	head = NULL;
 }
