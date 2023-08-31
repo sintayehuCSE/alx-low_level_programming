@@ -22,8 +22,8 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	temp->next = NULL;
 	if (!*head)
 	{
-		free(temp);
-		return (NULL);
+		*head = temp;
+		return (temp);
 	}
 	search_node = *head;
 	if (!idx)
