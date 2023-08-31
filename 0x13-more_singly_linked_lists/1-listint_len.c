@@ -1,22 +1,18 @@
 #include "lists.h"
-
 /**
- * listint_len - the number of elements in a linked listint_t list.
+ * listint_len - Determine number of nodes in singly linked list
+ * @h: Pointer to the singly linked list
  *
- * @h: head pointer
- *
- * Return: the number of elements
- *
+ * Return: The number of nodes
  */
-
 size_t listint_len(const listint_t *h)
 {
-	size_t count = 0;
+	size_t num_node = 0;
 
-	while (h != NULL)
+	while (h)
 	{
-	h = h->next;
-		count++;
+		num_node++;
+		h = h->next;
 	}
-	return (count);
+	return (num_node);
 }
