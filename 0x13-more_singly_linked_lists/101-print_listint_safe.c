@@ -1,11 +1,12 @@
 #include "lists.h"
+size_t print_non_loop(listint_t *head);
 /**
  * print_listint_safe - Print list in safe mode
  * @head: Pointer to the list
  *
  * Return: The number of nodes in the list
  */
-size_t print_listint_safe(const listint_t *head)
+size_t print_listint_safe(listint_t *head)
 {
 	size_t num_node = 0;
 	listint_t *slow_ptr;
@@ -32,21 +33,21 @@ size_t print_listint_safe(const listint_t *head)
 				if (slow_ptr == fast_ptr)
 				{
 					jam_loop = head;
-					while (jam_loop != fast_loop)
+					while (jam_loop != fast_ptr)
 					{
-						printf("[%p] %d\n", jam_loop->next, jam_loop->n);
+						printf("[%p] %d\n", (void *)jam_loop, jam_loop->n);
 						num_node++;
 						jam_loop = jam_loop->next;
 					}
-					printf("[%p] %d\n", jam_loop->next, jam_loop->n);
+					printf("[%p] %d\n", (void *)jam_loop, jam_loop->n);
 					jam_loop = jam_loop->next;
-					while (jam_loop != slow_loop)
+					while (jam_loop != slow_ptr)
 					{
-						printf("[%p] %d\n", jam_loop->next, jam_loop->n);
+						printf("[%p] %d\n", (void *)jam_loop, jam_loop->n);
 						num_node++;
 						jam_loop = jam_loop->next;
 					}
-					printf("-> [%p] %d\n", jam_loop->next, jam_loop->n);
+					printf("-> [%p] %d\n", (void *)jam_loop, jam_loop->n);
 				}
 			}
 		}
@@ -68,14 +69,12 @@ size_t print_listint_safe(const listint_t *head)
 size_t print_non_loop(listint_t *head)
 {
 	size_t num_node = 0;
-	long int node_addr = (void *)head;
 
 	while (head)
 	{
-		printf("[%ld] %d\n", node_addr, head->n);
+		printf("[%p] %d\n", (void *)head, head->n);
 		num_node++;
 		head = head->next;
-		node_addr = (void *)head;
 	}
 	return (num_node);
 }
