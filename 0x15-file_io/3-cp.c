@@ -39,10 +39,11 @@ int main(int argc, char *argv[])
 		write(STDERR_FILENO, "Error: Can't write to ", 22);
 		write(STDERR_FILENO, argv[2], argv2_len);
 		write(STDERR_FILENO, "\n", 1);
+		_close_open_file(from_fd);
 		exit(99);
 	}
 	_copy(from_fd, to_fd, argv[1], argv[2]);
-	return (1);
+	return (0);
 }
 /**
  * _argv1_len - Determine the length of first filename
@@ -95,7 +96,7 @@ void _copy(int from_fd, int to_fd, char *filename1, char *filename2)
 			dprintf(STDERR_FILENO, "%s %s\n", "Error: Can't read from file", filename1);
 			exit(98);
 		}
-		write_count = write(to_fd, buffer, BUFFER_SIZE);
+		write_count = write(to_fd, buffer, read_count);
 		if (write_count == -1)
 		{
 			dprintf(STDERR_FILENO, "%s %s\n", "Error: Can't write to", filename2);
@@ -111,7 +112,7 @@ void _copy(int from_fd, int to_fd, char *filename1, char *filename2)
  *
  * Return: Nothing
  */
-void _close_open_file(int fd);
+void _close_open_file(int fd)
 {
 	int close_status;
 
