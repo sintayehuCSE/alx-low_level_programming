@@ -119,7 +119,7 @@ void _close_open_file(int fd)
 	close_status = close(fd);
 	if (close_status == -1)
 	{
-		dprintf(STDERR_FILENO, "%s %d\n", "Error: Can't close", fd);
+		dprintf(STDERR_FILENO, "%s %d\n", "Error: Can't close fd", fd);
 		exit(100);
 	}
 }
