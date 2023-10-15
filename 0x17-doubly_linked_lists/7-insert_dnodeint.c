@@ -17,14 +17,14 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	new_node = malloc(sizeof(dlistint_t));
 	if (!new_node)
 		return (new_node);
-	if (!*head && idx == 0)
+	if (!*h && idx == 0)
 	{
 		new_node->n = n;
-		new_node->next = *head, new_node->prev = *head;
-		*head = new_node;
+		new_node->next = *h, new_node->prev = *h;
+		*h = new_node;
 		return (new_node);
 	}
-	locate = *head;
+	locate = *h;
 	for (; i < idx - 1; i++)
 	{
 		if (locate)
