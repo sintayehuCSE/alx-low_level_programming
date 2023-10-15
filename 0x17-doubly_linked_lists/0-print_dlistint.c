@@ -7,7 +7,6 @@
  */
 size_t print_dlistint(const dlistint_t *h)
 {
-	dlistint_t *temp;
 	size_t n = 0;
 
 	if (!h)
