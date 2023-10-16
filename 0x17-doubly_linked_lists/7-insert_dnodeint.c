@@ -27,7 +27,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	{
 		if (locate)
 			locate = locate->next;
-		printf("Are you in here?\n")
+		printf("Are you in here?\n");
 		if (!locate)
 			return (locate);
 	}
