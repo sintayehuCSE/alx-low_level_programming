@@ -14,14 +14,14 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 
 	if (!*head)
 		return (-1);
-	for (; (i <= (idx - 1)) && idx; i++)
+	for (; (i <= (index - 1)) && (index); i++)
 	{
 		if (locate)
 			locate = locate->next;
 		if (!locate)
 			return (-1);
 	}
-	if (idx == 0)
+	if (index == 0)
 	{
 		temp = locate->next, temp->prev = NULL;
 		*head = temp, free(locate);
