@@ -23,11 +23,10 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (new_node);
 	}
 	locate = *h;
-	for (; i < idx - 1; i++)
+	for (; (i < (idx - 1)) && (idx); i++)
 	{
 		if (locate)
 			locate = locate->next;
-		printf("Are you in here?\n");
 		if (!locate)
 			return (locate);
 	}
