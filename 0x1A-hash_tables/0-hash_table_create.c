@@ -5,10 +5,10 @@
 *
 * Return: The pointer to the newly created HashTable or Null on error
 */
-hash_table_t *hash_table_create(long unsigned int size)
+hash_table_t *hash_table_create(unsigned long int size)
 {
 	hash_table_t *hashTable = NULL;
-	long unsigned int i = 0;
+	unsigned long int i = 0;
 
 	hashTable = malloc(sizeof(hash_table_t));
 	if (!hashTable)
