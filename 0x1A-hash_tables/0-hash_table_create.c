@@ -5,7 +5,7 @@
 *
 * Return: The pointer to the newly created HashTable or Null on error
 */
-hash_table_t *hash_table_create(unsigned long int size)
+hash_table_t *hash_table_create(long unsigned int size)
 {
 	hash_table_t *hashTable = NULL;
 	long unsigned int i = 0;
@@ -14,7 +14,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 	if (!hashTable)
 		return (hashTable);
 	hashTable->size = size;
-	hashTable->array = calloc(hashTable->size, sizeof(hash_node_t));
+	hashTable->array = calloc(hashTable->size, sizeof(hashTable->array));
 	for (; i < hashTable->size; i++)
 		hashTable->array[i] = NULL;
 	return (hashTable);
