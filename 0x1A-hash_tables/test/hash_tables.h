@@ -42,10 +42,11 @@ unsigned long int hash_djb2(const unsigned char *str);
 unsigned long int key_index(const unsigned char *key, unsigned long int size);
 int hash_table_set(hash_table_t *ht, const char *key, const char *value);
 int store_item(hash_table_t *, hash_node_t *, unsigned long int);
+char *hash_table_get(const hash_table_t *ht, const char *key);
 
 /**.............String Manipulation.........................*/
-char *_strdup(const char *);
-void *_memcpy(char *, const char *, int);
+char *str_dup(const char *);
+void _memcpy(char **, const char *, int);
 int str_len(const char *);
 
 #endif /** Hash_Table*/
