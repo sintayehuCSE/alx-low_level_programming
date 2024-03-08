@@ -2,7 +2,6 @@
 #define Hash_Table
 
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
 
 /**
@@ -44,8 +43,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value);
 int store_item(hash_table_t *, hash_node_t *, unsigned long int);
 
 /**.............String Manipulation.........................*/
-char *_strdup(const char *);
-void *_memcpy(char *, const char *, int);
+char *str_dup(const char *);
+void _memcpy(char **, const char *, int);
 int str_len(const char *);
 
 #endif /** Hash_Table*/
