@@ -58,7 +58,9 @@ char *str_dup(const char *str)
 
 	len = str_len(str);
 	dup = (char *)malloc(sizeof(char) * len + 1);
-	_memcpy(&dup, str, len);
+	if (!dup)
+		return (NULL);
+	dup = _memcpy(dup, str, len);
 	return (dup);
 }
 /**
@@ -69,15 +71,16 @@ char *str_dup(const char *str)
 *
 * Return: Pointer to the destination string.
 */
-void _memcpy(char **dest, const char *src, int len)
+char *_memcpy(char *dest, const char *src, int len)
 {
 	int i = 0;
 
 	for (; i < len; i++)
 	{
-		*dest[i] = src[i];
+		dest[i] = src[i];
 	}
-	*dest[i] = '\0';
+	dest[i] = '\0';
+	return (dest);
 }
 /**
 * str_len - Calculate the lenght of a string

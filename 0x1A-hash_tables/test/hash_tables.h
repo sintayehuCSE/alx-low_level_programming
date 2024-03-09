@@ -46,7 +46,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key);
 
 /**.............String Manipulation.........................*/
 char *str_dup(const char *);
-void _memcpy(char **, const char *, int);
+char *_memcpy(char *, const char *, int);
 int str_len(const char *);
 
 #endif /** Hash_Table*/
