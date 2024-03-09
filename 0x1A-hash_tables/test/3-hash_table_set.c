@@ -11,10 +11,21 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int hash_code;
 	hash_node_t *new_item;
+	hash_node_t *head = NULL;
 
 	if (!ht || !key)
 		return (0);
 	hash_code = key_index((const unsigned char *)key, ht->size);
+	head = ht->array[hash_code];
+	while (head)/*......Updates key to new value.......*/
+	{
+		if (strcmp(head->key, key) == 0)
+		{
+			head->value = str_dup(value);
+			return (1);
+		}
+		head = head->next;
+	}
 	new_item = malloc(sizeof(hash_node_t));
 	if (!new_item)
 		return (0);
