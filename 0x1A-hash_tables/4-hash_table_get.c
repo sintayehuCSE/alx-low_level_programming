@@ -12,9 +12,9 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	hash_node_t *head;
 	char *value;
 
-	hash_code = key_index((const unsigned char *)key, ht->size);
 	if (!ht->array[hash_code] || hash_code > ht->size || !ht)
 		return (NULL);
+	hash_code = key_index((const unsigned char *)key, ht->size);
 	if (!ht->array[hash_code]->next)
 		return (value = ht->array[hash_code]->value);
 	head = ht->array[hash_code];
