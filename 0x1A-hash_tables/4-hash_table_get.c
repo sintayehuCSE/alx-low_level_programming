@@ -18,7 +18,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	if (!ht->array[hash_code]->next)
 		return (value = ht->array[hash_code]->value);
 	head = ht->array[hash_code];
-	while (head->next)
+	while (head)
 	{
 		if (strcmp(head->key, key) == 0)
 			return (value = head->value);
