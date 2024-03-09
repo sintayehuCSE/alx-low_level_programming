@@ -21,6 +21,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (strcmp(head->key, key) == 0)
 		{
+			/*Don't forget to free old value memory address*/
 			head->value = str_dup(value);
 			return (1);
 		}
