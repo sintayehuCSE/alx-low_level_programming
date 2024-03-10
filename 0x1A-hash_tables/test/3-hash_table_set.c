@@ -13,7 +13,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *new_item;
 	hash_node_t *head = NULL;
 
-	if (!ht || !key)
+	if (!ht || key == (const char *)"" || !key || !value)
 		return (0);
 	hash_code = key_index((const unsigned char *)key, ht->size);
 	head = ht->array[hash_code];

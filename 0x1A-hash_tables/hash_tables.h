@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include "shash_tables.h"
 
 /**
  * struct hash_node_s - Node of a hash table/Item in the HASH_TABLE slot/bucket
