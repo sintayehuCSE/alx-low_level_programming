@@ -274,6 +274,12 @@ void shash_table_print(const shash_table_t *ht)
 		printf("}\n");
 	}
 }
+/**
+* shash_table_print_rev - Print the HashTable in reverse.
+* @ht: Pointer to the HashTable
+*
+* Return: Nothing
+*/
 void shash_table_print_rev(const shash_table_t *ht)
 {
 	shash_node_t *temp;
