@@ -1,1 +1,5 @@
-This is a directory in which all problems of 0x0E-structures_typedef project are solved
+## Learning Objectives
+##### At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
+
+##### What are structures, when, why and how to use them
+##### How to use typedef
