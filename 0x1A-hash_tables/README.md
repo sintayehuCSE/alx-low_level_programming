@@ -1,8 +1,6 @@
 0x1A. C - Hash tables
 =====================
 
--   By Julien Barbier
-
 Resources
 ---------
 
